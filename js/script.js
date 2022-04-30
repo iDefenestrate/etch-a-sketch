@@ -1,7 +1,8 @@
+let columnCount = 16;
 const container = document.getElementById('container');
 container.setAttribute(
   'style',
-  'display: grid; grid-template-columns: repeat(16,1fr)'
+  `display: grid; grid-template-columns: repeat(${columnCount}, 1fr)`
 );
 
 // change dimensions button
