@@ -1,6 +1,8 @@
 #container {
-  height: 960px;
-  width: 960px;
+  height: 700px;
+  width: 700px;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
 }
 
 .row {
