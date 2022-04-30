@@ -1,9 +1,4 @@
-let columnCount = 16;
 const container = document.getElementById('container');
-container.setAttribute(
-  'style',
-  `display: grid; grid-template-columns: repeat(${columnCount}, 1fr)`
-);
 
 // change dimensions button
 const outer = document.getElementById('outer-container');
@@ -15,19 +10,26 @@ button.addEventListener('click', doAsk);
 
 // prompt to change grid dimensions
 function doAsk() {
-  let popUp = prompt('Enter desired grid dimensions');
+  let count = prompt('Enter desired grid dimensions');
 
-  if (popUp < 1) {
+  if (count < 1) {
     alert("that won't work, too small"); // that won't work, too small
-  } else if (popUp >= 1 && popUp <= 100) {
-    columnCount = popUp;
-    makeRow(popUp * popUp); // enter working function
+  } else if (count >= 1 && count <= 100) {
+    deleteRows();
+    makeRow(count * count);
+    container.style = `grid-template-columns: repeat(${count}, 1fr)`;
     changeColor();
-  } else if (popUp > 100) {
+  } else if (count > 100) {
     alert('too high'); // that won't work, too high
   } else {
     alert('invalid bro'); // invalid; enter a number 1-100
   }
+}
+
+// delete function
+function deleteRows() {
+  const container = document.getElementById('container');
+  container.innerHTML = ' ';
 }
 
 // set row number
