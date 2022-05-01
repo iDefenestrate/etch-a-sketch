@@ -29,11 +29,11 @@ function doAsk() {
   } else if (count > 100) {
     alert("That's too large! Please enter a number between 1 and 100.");
   } else {
-    alert('Invalid.\n Please enter a number between 1 and 100.'); // invalid; enter a number 1-100
+    alert('Invalid.\n Please enter a number between 1 and 100.');
   }
 }
 
-// delete function
+// delete 16x16 to make way for new grid
 function deleteRows() {
   const container = document.getElementById('container');
   container.textContent = ' ';
@@ -62,4 +62,19 @@ function changeColor() {
 
 changeColor();
 
-// create display for the dimensions
+const btnContainer = document.getElementById('btn-container');
+const newBtn = document.createElement('button');
+newBtn.innerText = 'Reset Grid';
+btnContainer.appendChild(newBtn);
+
+// reset the Grid
+
+function resetGrid() {
+  const row = document.querySelectorAll('.row');
+  row.forEach((row) => {
+    row.style.backgroundColor = 'black';
+  });
+  changeColor();
+}
+
+newBtn.onclick = resetGrid;
