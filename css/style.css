@@ -66,4 +66,5 @@ body {
 .row {
   height: 100%;
   background-color: black;
+  cursor: pointer;
 }
