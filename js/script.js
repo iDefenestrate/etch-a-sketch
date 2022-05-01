@@ -65,6 +65,7 @@ changeColor();
 const btnContainer = document.getElementById('btn-container');
 const newBtn = document.createElement('button');
 newBtn.innerText = 'Reset Grid';
+newBtn.className = 'reset';
 btnContainer.appendChild(newBtn);
 
 // reset the Grid

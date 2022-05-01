@@ -3,7 +3,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(146, 143, 143);
+  background-color: rgb(207, 203, 203);
 }
 
 .full {
@@ -13,12 +13,14 @@ body {
 #btn-container {
   margin-bottom: 10px;
 }
+
 .display {
   display: block;
   margin-top: 50px;
 }
 
-.btn {
+.btn,
+.reset {
   background-color: rgb(0, 0, 0);
   border: none;
   font-size: 18px;
@@ -30,7 +32,12 @@ body {
   text-align: center;
 }
 
-.btn:hover {
+.reset {
+  margin-left: 20px;
+}
+
+.btn:hover,
+.reset:hover {
   background-color: white;
   color: black;
   transition: 0.15;
@@ -39,6 +46,7 @@ body {
 #grid-dimensions {
   font-size: 26px;
   font-weight: 900;
+  text-align: center;
 }
 
 .dimensions {
