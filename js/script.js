@@ -12,7 +12,9 @@ button.addEventListener('click', doAsk);
 function doAsk() {
   let count = prompt('Enter desired grid dimensions');
 
-  if (count < 1) {
+  if (count == '' || count == null) {
+    return;
+  } else if (count < 1) {
     alert("that won't work, too small"); // that won't work, too small
   } else if (count >= 1 && count <= 100) {
     deleteRows();
@@ -29,7 +31,7 @@ function doAsk() {
 // delete function
 function deleteRows() {
   const container = document.getElementById('container');
-  container.innerHTML = ' ';
+  container.textContent = ' ';
 }
 
 // set row number
