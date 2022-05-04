@@ -14,22 +14,25 @@ function doAsk() {
   let count = prompt(
     'Enter your desired number of squares on each side. \n Min: 1 \n Max: 100.'
   );
+
+  let realCount = Math.trunc(count);
+
   const dimensions = document.querySelector('.dimensions');
 
-  if (count == '' || count == null) {
+  if (realCount == '' || realCount == null) {
     return;
-  } else if (count < 1) {
-    alert("That's too small! Please enter a number between 1 and 100.");
-  } else if (count >= 1 && count <= 100) {
+  } else if (realCount < 1) {
+    alert("That's too small! Please enter a number between 1 and 100");
+  } else if (realCount >= 1 && realCount <= 100) {
     deleteRows();
-    makeRow(count * count);
-    dimensions.innerText = `${count} x ${count}`;
-    container.style = `grid-template-columns: repeat(${count}, 1fr)`;
+    makeRow(realCount * realCount);
+    dimensions.innerText = `${realCount} x ${realCount}`;
+    container.style = `grid-template-columns: repeat(${realCount}, 1fr)`;
     changeColor();
-  } else if (count > 100) {
-    alert("That's too large! Please enter a number between 1 and 100.");
+  } else if (realCount > 100) {
+    alert("That's too large! Please enter a number between 1 and 100");
   } else {
-    alert('Invalid.\n Please enter a number between 1 and 100.');
+    alert('Invalid.\n Please enter a number between 1 and 100');
   }
 }
 
